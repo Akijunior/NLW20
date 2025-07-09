@@ -1,7 +1,8 @@
 import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod'
-import { id } from 'zod/v4/locales'
 import { db } from '../../db/connection.ts'
 import { schema } from '../../db/schema/index.ts'
+import { eq, count } from 'drizzle-orm'
+import { create } from 'domain'
 
 export const getRoomsRoute: FastifyPluginCallbackZod = (app) => {
   app.get('/rooms', async () => {
@@ -9,8 +10,12 @@ export const getRoomsRoute: FastifyPluginCallbackZod = (app) => {
       .select({
         id: schema.rooms.id,
         name: schema.rooms.name,
+        createdAt: schema.rooms.createdAt,
+        questionsCount: count(schema.questions.id),
       })
       .from(schema.rooms)
+      .leftJoin(schema.questions, eq(schema.questions.roomId, schema.rooms.id))
+      .groupBy(schema.rooms.id)
       .orderBy(schema.rooms.createdAt)
 
     return results
