@@ -38,10 +38,10 @@ GET {{baseUrl}}/rooms/{{roomId}}/questions
 
 # Create question
 # @name createQuestion
-POST {{baseUrl}}/rooms/{{roomId}}/questions
+POST {{baseUrl}}/rooms/0dbc2f98-4968-44be-4fdb-f399737e5e21/questions
 Accept: application/json
 Content-Type: application/json
 
 {
-    "question": "What is your favorite color?"
+    "question": "O que é Java e seus derivados?"
 }

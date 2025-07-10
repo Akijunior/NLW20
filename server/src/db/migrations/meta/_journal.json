@@ -15,6 +15,27 @@
       "when": 1752086581357,
       "tag": "0001_redundant_baron_zemo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752164260080,
+      "tag": "0002_blue_mister_sinister",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1752167849063,
+      "tag": "0003_petite_major_mapleleaf",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1752168035486,
+      "tag": "0004_smart_maelstrom",
+      "breakpoints": true
     }
   ]
 }

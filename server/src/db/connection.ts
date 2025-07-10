@@ -8,7 +8,3 @@ export const db = drizzle(sql, {
   schema,
   casing: 'snake_case',
 })
-
-const result = await sql`SELECT 'Hello, world!' AS message`
-
-console.log(result) // Should log: Hello, world!
